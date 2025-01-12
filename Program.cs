@@ -1,3 +1,6 @@
+using WeatherForecast.Factories;
+using WeatherForecast.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -23,3 +26,13 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+/* Abstract Factory - https://refactoring.guru/design-patterns/abstract-factory/csharp/example#lang-features */
+
+IWeatherForecastFactory localFactory = new LocalWeatherFactory();
+IWeatherForecastService localService = localFactory.CreateWeatherForecastService();
+Console.WriteLine(localService.GetWeatherReport());
+
+IWeatherForecastFactory globalFactory = new GlobalWeatherFactory();
+IWeatherForecastService globalService = globalFactory.CreateWeatherForecastService();
+Console.WriteLine(globalService.GetWeatherReport());
