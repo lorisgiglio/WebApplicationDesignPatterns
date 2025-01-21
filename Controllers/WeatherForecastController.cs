@@ -29,6 +29,8 @@ namespace WebApplication1.Controllers
                Abstract Factory is a creational design pattern, which solves the problem of creating entire product families 
                without specifying their concrete classes.
              */
+            
+            Console.WriteLine("--- ABSTRACT FACTORY PATTERN");
 
             IWeatherForecastFactory localFactory = new LocalWeatherFactory();
             IWeatherForecastService localService = localFactory.CreateWeatherForecastService();
@@ -44,8 +46,9 @@ namespace WebApplication1.Controllers
                but allows subclasses to alter the type of objects that will be created.
              */
 
-
+            Console.WriteLine("--- FACTORY METHOD PATTERN");
             Console.WriteLine("Select Weather Service: 1. OpenWeather 2. Weather.com");
+
             string choice = Console.ReadLine();
 
             WeatherServiceFactory factory = choice switch
