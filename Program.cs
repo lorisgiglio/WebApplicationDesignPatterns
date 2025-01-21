@@ -1,6 +1,3 @@
-using WeatherForecast.Factories;
-using WeatherForecast.Interfaces;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

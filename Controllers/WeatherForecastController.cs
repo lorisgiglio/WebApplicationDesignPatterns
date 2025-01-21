@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WeatherForecast.Factories;
 using WeatherForecast.Interfaces;
+using WebApplication1.FactoryMethod.Factories;
 
 namespace WebApplication1.Controllers
 {
@@ -37,8 +38,43 @@ namespace WebApplication1.Controllers
             IWeatherForecastService globalService = globalFactory.CreateWeatherForecastService();
             Console.WriteLine(globalService.GetWeatherReport());
 
+            /*
+               Factory Method - https://refactoring.guru/design-patterns/factory-method
+               Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, 
+               but allows subclasses to alter the type of objects that will be created.
+             */
 
 
+            Console.WriteLine("Select Weather Service: 1. OpenWeather 2. Weather.com");
+            string choice = Console.ReadLine();
+
+            WeatherServiceFactory factory = choice switch
+            {
+                "1" => new OpenWeatherServiceFactory(),
+                "2" => new WeatherDotComServiceFactory(),
+                _ => throw new ArgumentException("Invalid choice.")
+            };
+
+            var weatherService = factory.CreateWeatherService();
+
+            Console.WriteLine("Enter a location:");
+            string location = Console.ReadLine();
+
+            Console.WriteLine(weatherService.GetWeatherReport(location));
+
+
+
+
+
+
+
+
+
+
+
+            return null;
+
+            /*
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
@@ -46,7 +82,7 @@ namespace WebApplication1.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
-
+            */
         }
     }
 }
