@@ -1,4 +1,4 @@
-﻿namespace WeatherForecast.Interfaces
+﻿namespace WebApplication1.DesignPatterns.AbstractFactory.Interfaces
 {
     public interface IWeatherForecastService
     {

@@ -1,6 +1,6 @@
-﻿using WeatherForecast.Interfaces;
+﻿using WebApplication1.DesignPatterns.AbstractFactory.Interfaces;
 
-namespace WeatherForecast.Global
+namespace WebApplication1.DesignPatterns.AbstractFactory.Global
 {
     public class GlobalWeatherForecast : IWeatherForecastService
     {

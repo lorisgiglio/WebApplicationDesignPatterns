@@ -1,6 +1,6 @@
-﻿using WeatherForecast.Interfaces;
+﻿using WebApplication1.DesignPatterns.AbstractFactory.Interfaces;
 
-namespace WeatherForecast.Local
+namespace WebApplication1.DesignPatterns.AbstractFactory.Local
 {
     public class LocalWeatherForecast : IWeatherForecastService
     {

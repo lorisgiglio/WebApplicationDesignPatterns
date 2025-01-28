@@ -1,6 +1,6 @@
-﻿using WebApplication1.FactoryMethod.WeatherServices;
+﻿using WebApplication1.DesignPatterns.FactoryMethod.WeatherServices;
 
-namespace WebApplication1.FactoryMethod.Factories
+namespace WebApplication1.DesignPatterns.FactoryMethod.Factories
 {
     public class WeatherDotComServiceFactory : WeatherServiceFactory
     {

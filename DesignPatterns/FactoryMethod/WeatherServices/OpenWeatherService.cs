@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.FactoryMethod.WeatherServices
+﻿namespace WebApplication1.DesignPatterns.FactoryMethod.WeatherServices
 {
     public class OpenWeatherService : IWeatherService
     {

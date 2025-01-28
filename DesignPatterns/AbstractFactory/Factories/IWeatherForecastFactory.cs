@@ -1,6 +1,6 @@
-﻿using WeatherForecast.Interfaces;
+﻿using WebApplication1.DesignPatterns.AbstractFactory.Interfaces;
 
-namespace WeatherForecast.Factories
+namespace WebApplication1.DesignPatterns.AbstractFactory.Factories
 {
     public interface IWeatherForecastFactory
     {

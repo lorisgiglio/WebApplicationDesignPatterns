@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using WeatherForecast.Factories;
-using WeatherForecast.Interfaces;
-using WebApplication1.FactoryMethod.Factories;
+using WebApplication1.DesignPatterns.AbstractFactory.Factories;
+using WebApplication1.DesignPatterns.AbstractFactory.Interfaces;
+using WebApplication1.DesignPatterns.FactoryMethod.Factories;
 
 namespace WebApplication1.Controllers
 {
@@ -29,7 +30,7 @@ namespace WebApplication1.Controllers
                Abstract Factory is a creational design pattern, which solves the problem of creating entire product families 
                without specifying their concrete classes.
              */
-            
+
             Console.WriteLine("--- ABSTRACT FACTORY PATTERN");
 
             IWeatherForecastFactory localFactory = new LocalWeatherFactory();
