@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using WeatherForecast.Factories;
 using WebApplication1.DesignPatterns.AbstractFactory.Factories;
 using WebApplication1.DesignPatterns.AbstractFactory.Interfaces;
 using WebApplication1.DesignPatterns.FactoryMethod.Factories;
+using WebApplication1.DesignPatterns.Visitor;
 
 namespace WebApplication1.Controllers
 {
@@ -69,6 +69,45 @@ namespace WebApplication1.Controllers
 
 
 
+            /*
+               Visitor - https://refactoring.guru/design-patterns/visitor
+               Visitor is a behavioral design pattern that lets you separate algorithms from the objects on which they operate.
+             */
+
+
+            // Creazione di una lista di WeatherForecast
+
+            Console.WriteLine("--- VISITOR PATTERN");
+            var forecasts = new List<WeatherForecast>
+        {
+            new WeatherForecast
+            {
+                Date = DateTime.Now,
+                TemperatureC = 25,
+                Summary = "Sunny"
+            },
+            new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(1),
+                TemperatureC = 18,
+                Summary = "Cloudy"
+            },
+            new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(2),
+                TemperatureC = 30,
+                Summary = "Hot"
+            }
+        };
+
+            // Creazione del Visitor
+            IWeatherVisitor visitor = new WeatherReportVisitor();
+
+            // Applicazione del Visitor a ciascun oggetto WeatherForecast
+            foreach (var forecast in forecasts)
+            {
+                forecast.Accept(visitor);
+            }
 
 
 
@@ -76,7 +115,8 @@ namespace WebApplication1.Controllers
 
 
 
-            return null;
+
+            return null!;
 
             /*
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

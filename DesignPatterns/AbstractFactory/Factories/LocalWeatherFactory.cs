@@ -1,5 +1,5 @@
-﻿using WeatherForecast.Local;
-using WebApplication1.DesignPatterns.AbstractFactory.Interfaces;
+﻿using WebApplication1.DesignPatterns.AbstractFactory.Interfaces;
+using WebApplication1.DesignPatterns.AbstractFactory.Local;
 
 namespace WebApplication1.DesignPatterns.AbstractFactory.Factories
 {
