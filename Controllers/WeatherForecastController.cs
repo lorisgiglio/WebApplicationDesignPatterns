@@ -10,11 +10,6 @@ namespace WebApplication1.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
@@ -50,7 +45,7 @@ namespace WebApplication1.Controllers
             Console.WriteLine("--- FACTORY METHOD PATTERN");
             Console.WriteLine("Select Weather Service: 1. OpenWeather 2. Weather.com");
 
-            string choice = Console.ReadLine();
+            string choice = Console.ReadLine()!;
 
             WeatherServiceFactory factory = choice switch
             {
@@ -62,7 +57,7 @@ namespace WebApplication1.Controllers
             var weatherService = factory.CreateWeatherService();
 
             Console.WriteLine("Enter a location:");
-            string location = Console.ReadLine();
+            string location = Console.ReadLine()!;
 
             Console.WriteLine(weatherService.GetWeatherReport(location));
 
@@ -108,11 +103,6 @@ namespace WebApplication1.Controllers
             {
                 forecast.Accept(visitor);
             }
-
-
-
-
-
 
 
 
